@@ -154,7 +154,8 @@ ramips_setup_interfaces()
 	edimax,br-6478ac-v2|\
 	lb-link,bl-w1200|\
 	tplink,archer-c2-v1)
-		ucidef_add_switch "switch0"
+		ucidef_add_switch "switch0" \
+			"5:lan" "6@eth0"
 		ucidef_add_switch_attr "switch0" "enable" "false"
 		ucidef_add_switch "switch1" \
 			"1:lan" "2:lan" "3:lan" "4:lan" "0:wan" "6@eth0"
