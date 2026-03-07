@@ -13,8 +13,8 @@
 	aliases {
 		led-boot = &led_status_blue;
 		led-failsafe = &led_status_red;
-		led-running = &led_status_blue;
-		led-upgrade = &led_status_green;
+		led-running = &led_status_white;
+		led-upgrade = &led_status_yellow;
 		label-mac-device = &wmac;
 	};
 
@@ -24,7 +24,7 @@
 		led_status_red: led-0 {
 			color = <LED_COLOR_ID_RED>;
 			function = LED_FUNCTION_STATUS;
-			gpios = <&gpio 14 GPIO_ACTIVE_HIGH>;
+			gpios = <&gpio 16 GPIO_ACTIVE_HIGH>;
 		};
 
 		led_status_green: led-1 {
@@ -36,7 +36,31 @@
 		led_status_blue: led-2 {
 			color = <LED_COLOR_ID_BLUE>;
 			function = LED_FUNCTION_STATUS;
-			gpios = <&gpio 16 GPIO_ACTIVE_HIGH>;
+			gpios = <&gpio 14 GPIO_ACTIVE_HIGH>;
+		};
+
+		led_status_cyan: led-3 {
+			color = <LED_COLOR_ID_CYAN>;
+			function = LED_FUNCTION_STATUS;
+			gpios = <&gpio 14 GPIO_ACTIVE_HIGH &gpio 15 GPIO_ACTIVE_HIGH>;
+		};
+
+		led_status_magenta: led-4 {
+			color = <LED_COLOR_ID_MAGENTA>;
+			function = LED_FUNCTION_STATUS;
+			gpios = <&gpio 14 GPIO_ACTIVE_HIGH &gpio 16 GPIO_ACTIVE_HIGH>;
+		};
+
+		led_status_yellow: led-5 {
+			color = <LED_COLOR_ID_YELLOW>;
+			function = LED_FUNCTION_STATUS;
+			gpios = <&gpio 15 GPIO_ACTIVE_HIGH &gpio 16 GPIO_ACTIVE_HIGH>;
+		};
+
+		led_status_white: led-6 {
+			color = <LED_COLOR_ID_WHITE>;
+			function = LED_FUNCTION_STATUS;
+			gpios = <&gpio 14 GPIO_ACTIVE_HIGH &gpio 15 GPIO_ACTIVE_HIGH &gpio 16 GPIO_ACTIVE_HIGH>;
 		};
 	};
 
